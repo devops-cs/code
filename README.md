@@ -38,7 +38,7 @@
 
 
 
-#### The below code will align the report, 
+### The below code will align the report, 
 
 	python stackflow.py > 02_06.txt
 

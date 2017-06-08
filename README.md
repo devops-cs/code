@@ -1,4 +1,4 @@
-### The below python code use to pull the data from website (stackflow.py).
+#### The below python code use to pull the data from website (stackflow.py).
 
 	import subprocess
 	import mechanize
@@ -38,7 +38,7 @@
 
 
 
-### The below code will align the report, 
+#### The below code will align the report, 
 
 	python stackflow.py > 02_06.txt
 
@@ -54,9 +54,9 @@
 	8)awk 'ORS=NR%5?FS:RS' - Concatenate 5 words per line.
 
 
-### The below python script is use to auto login on jump server from local system and form tunnel with storage box without any addition package on any servers
-### Install paramiko module on local machine.
-### Run the below script from local machine.
+#### The below python script is use to auto login on jump server from local system and form tunnel with storage box without any addition package on any servers
+##### Install paramiko module on local machine.
+##### Run the below script from local machine.
 
 	import paramiko
 	from sshtunnel import SSHTunnelForwarder

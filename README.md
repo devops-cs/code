@@ -35,3 +35,18 @@
 			test1 = (subprocess.check_output("cat output1.txt | grep -w -A1 -e emp_name -e code_name -e address -e id | grep -v -e '<th>' -e 'label' -e 'input'", shell=True))
 			print line
 			print test1
+
+
+#### The below code will align the report, 
+	cat 02_06.txt  | sed 's/<\/td>//g' | sed 's/<td>//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | grep -v -e ^- -e ^$ | grep -v -B1 ^econ | grep -v  ^- | sed "s/$/,/g"| awk 'ORS=NR%5?FS:RS'
+
+1)sed 's/<\/td>//g' - will remove the <\/td> tag
+2)sed 's/<td>//g' - will remove the <td> tag
+3)sed 's/^[ \t]*//;s/[ \t]*$//' - replaces leading whitespace &  trailing whitespace
+4)grep -v -e ^- -e ^$ - Remove line start with - and  blanks lines
+5)grep -v -B1 ^econ - remove one line before the matching pattern.
+6)grep -v  ^- - Remove line start with -
+7)sed "s/$/,/g" - Add comma at end of every lines.
+8)awk 'ORS=NR%5?FS:RS' - Concatenate 5 words per line.
+
+

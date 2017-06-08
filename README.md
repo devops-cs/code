@@ -1,4 +1,4 @@
-###The below python code use to pull the data from website (stackflow.py).
+### The below python code use to pull the data from website (stackflow.py).
 
 	import subprocess
 	import mechanize
@@ -55,8 +55,8 @@
 
 
 ### The below python script is use to auto login on jump server from local system and form tunnel with storage box without any addition package on any servers
-## Install paramiko module on local machine.
-## Run the below script from local machine.
+### Install paramiko module on local machine.
+### Run the below script from local machine.
 
 	import paramiko
 	from sshtunnel import SSHTunnelForwarder

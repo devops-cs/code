@@ -1,4 +1,4 @@
-###The below python code use to pull the data from website.
+###The below python code use to pull the data from website (stackflow.py).
 
 	import subprocess
 	import mechanize
@@ -37,15 +37,19 @@
 			print test1
 
 
+
 #### The below code will align the report, 
+
+	python stackflow.py > 02_06.txt
+
 	cat 02_06.txt  | sed 's/<\/td>//g' | sed 's/<td>//g' | sed 's/^[ \t]*//;s/[ \t]*$//' | grep -v -e ^- -e ^$ | grep -v -B1 ^econ | grep -v  ^- | sed "s/$/,/g"| awk 'ORS=NR%5?FS:RS'
 
-1)sed 's/<\/td>//g' - will remove the <\/td> tag
-2)sed 's/<td>//g' - will remove the <td> tag
-3)sed 's/^[ \t]*//;s/[ \t]*$//' - replaces leading whitespace &  trailing whitespace
-4)grep -v -e ^- -e ^$ - Remove line start with - and  blanks lines
-5)grep -v -B1 ^econ - remove one line before the matching pattern.
-6)grep -v  ^- - Remove line start with -
+	1)sed 's/<\/td>//g' - will remove the <\/td> tag
+	2)sed 's/<td>//g' - will remove the <td> tag
+	3)sed 's/^[ \t]*//;s/[ \t]*$//' - replaces leading whitespace &  trailing whitespace
+	4)grep -v -e ^- -e ^$ - Remove line start with - and  blanks lines
+	5)grep -v -B1 ^econ - remove one line before the matching pattern.
+	6)grep -v  ^- - Remove line start with -
 7)sed "s/$/,/g" - Add comma at end of every lines.
 8)awk 'ORS=NR%5?FS:RS' - Concatenate 5 words per line.
 

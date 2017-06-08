@@ -54,3 +54,27 @@
 	8)awk 'ORS=NR%5?FS:RS' - Concatenate 5 words per line.
 
 
+### The below python script is use to auto login on jump server from local system and form tunnel with storage box without any addition package on any servers
+## Install paramiko module on local machine.
+## Run the below script from local machine.
+
+	import paramiko
+	from sshtunnel import SSHTunnelForwarder
+	with SSHTunnelForwarder(
+	   ('servername', 22),		#jump server address
+	    ssh_username='ajay.prajapati',
+	    ssh_pkey=paramiko.RSAKey.from_private_key_file("/root/.ssh/id_rsa"),
+	    #ssh_private_key_password="*******",
+	   remote_bind_address=("*.*.*.*", 22), #storage box ip address 
+	   local_bind_address=('127.0.0.1', 10023)
+	) as tunnel:
+	   client = paramiko.SSHClient()
+		#client.load_system_host_keys()
+	   client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+	   client.connect(hostname='127.0.0.1', username="root", password="****", port=10023, look_for_keys=False)
+		# do some operations with client session
+	   stdin, stdout, stderr = (client.exec_command('./datapull.sh')) # it will run the datapull.sh which is on storage box.
+	   print stdout.readlines()
+	   print stderr.readlines()
+	   client.close()
+

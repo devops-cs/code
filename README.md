@@ -1,3 +1,5 @@
+###The below python code use to pull the data from website.
+
 	import subprocess
 	import mechanize
 	import urlparse

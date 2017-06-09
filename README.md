@@ -78,6 +78,6 @@
 	   print stderr.readlines()
 	   client.close()
 	   
-# The command used to upload the file on wesite- This example to upload file on confluence.
-cat confluence.py import subprocess subprocess.check_output("curl -v -S -X POST -H 'X-Atlassian-Token: no-check' -F file='@filename.txt' 'https:********* username=******&os_password=*********'", shell=True)`
+#### The command used to upload the file on wesite- This example to upload file on confluence.
+	cat confluence.py import subprocess subprocess.check_output("curl -v -S -X POST -H 'X-Atlassian-Token: no-check' -F 	file='@filename.txt' 'https:********* username=******&os_password=*********'", shell=True)`
 

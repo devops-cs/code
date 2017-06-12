@@ -82,7 +82,7 @@
 	cat confluence.py import subprocess subprocess.check_output("curl -v -S -X POST -H 'X-Atlassian-Token: no-check' -F 	file='@filename.txt' 'https:********* username=******&os_password=*********'", shell=True)`
 
 #### The below command will print the MAC and IP address for provided interface
-	ip addr show enp0s8 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+	ip addr show enp0s8 | grep -w  -e  inet -e ether | awk '{ print $2; }' | sed 's/\/.*$//'
 	
 # Output-
 		10.0.0.*

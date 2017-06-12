@@ -83,6 +83,6 @@
 
 #### The below command will print the MAC and IP address for provided interface
 	ip addr show enp0s8 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
-Output-
+	Output-
 	10.0.0.*
 	****::a00:27ff:**83:****

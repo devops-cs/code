@@ -81,9 +81,9 @@
 #### The command used to upload the file on wesite- This example to upload file on confluence.
 	cat confluence.py import subprocess subprocess.check_output("curl -v -S -X POST -H 'X-Atlassian-Token: no-check' -F 	file='@filename.txt' 'https:********* username=******&os_password=*********'", shell=True)`
 
-#### The below command will print the MAC and IP address for provided interface
+#### The below command will print the MAC and IP address for provided interface - it ran on Centos/Redhat - 7
 	ip addr show enp0s8 | grep -w  -e  inet -e ether | awk '{ print $2; }' | sed 's/\/.*$//'
 	
-# Output-
-		10.0.0.*
-		****::a00:27ff:**83:****
+#### Output-
+		**:00:27:**:d7:**
+		10.0.0.**

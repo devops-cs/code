@@ -111,7 +111,7 @@
         . /etc/bashrc
 	fi
 	
-	7) check with below command:
+	7) verify with below command:
 	[root@main3 ~]# python --version
 	Python 3.5.2
 

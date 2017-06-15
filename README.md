@@ -116,7 +116,7 @@
 	Python 3.5.2
 
 #### How to find package name by using command:
-	[root@main3 .python]# rpm -qf $(which top)
+	[root@****]# rpm -qf $(which top)
 	output - procps-ng-3.3.10-10.el7.x86_64
 
 

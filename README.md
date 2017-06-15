@@ -87,3 +87,32 @@
 #### Output-
 		**:00:27:**:d7:**
 		10.0.0.**
+
+#### Upgrade the python from 2.7.5 to 3.5.2
+
+	1) wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tgz
+	2) tar -xvzf Python-3.5.2.tgz
+	3) cd Python-3.5.2
+	4) ./configure --prefix=/usr/local
+	5) make altinstall
+	6) alias python=/usr/bin/python3 and enter the same entry in  ~/.bashrc file to make it permanent
+	
+	File - .bashrc is below
+
+	# User specific aliases and functions
+
+	alias python=/usr/local/bin/python3.5
+	alias rm='rm -i'
+	alias cp='cp -i'
+	alias mv='mv -i'
+
+	# Source global definitions
+	if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+	fi
+	
+	7) check with below command:
+	[root@main3 ~]# python --version
+	Python 3.5.2
+
+	

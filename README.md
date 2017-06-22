@@ -138,3 +138,16 @@
 		file8
 		file9
 		file10
+
+#### To check port is open or not on remote/local system without nmap
+		]# echo > /dev/tcp/`hostname`/80 && echo "PORT OPEN"
+		PORT OPEN
+		
+		]# echo > /dev/tcp/`hostname`/81 && echo "PORT OPEN"
+		-bash: connect: Connection refused
+		-bash: /dev/tcp/localhost.localdomain/81: Connection refused
+		
+		for i in `seq 1 80` ; do echo > /dev/tcp/`hostname`/$i && echo "PORT OPEN $i";  done
+
+		
+

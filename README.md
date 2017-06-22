@@ -125,3 +125,16 @@
 		for i in `cat serverlist.txt | awk '{ print $2 }'` ; do ssh@$i; done
 	bash: ssh@10.0.0.1: command not found...
 	bash: ssh@10.0.0.2: command not found...
+
+
+		]# for i in `seq 1 10` ; do echo file$i; done
+		file1
+		file2
+		file3
+		file4
+		file5
+		file6
+		file7
+		file8
+		file9
+		file10

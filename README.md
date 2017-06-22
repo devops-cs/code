@@ -121,4 +121,7 @@
 	[root@****]# rpm -qf $(which top)
 	output - procps-ng-3.3.10-10.el7.x86_64
 
-
+#### For loop example 
+		for i in `cat serverlist.txt | awk '{ print $2 }'` ; do ssh@$i; done
+	bash: ssh@10.0.0.1: command not found...
+	bash: ssh@10.0.0.2: command not found...

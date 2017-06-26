@@ -88,7 +88,11 @@
 		**:00:27:**:d7:**
 		10.0.0.**
 
-#### Upgrade the python from 2.7.5 to 3.5.2
+#### Upgrade the python from 2.7.5 to 3.5.2 - 
+	Ensure you have installed below:
+	a) yum groupinstall "Development tools"
+	b) yum install openssl-devel
+	c) yum install zlib-devel bzip2-devel sqlite sqlite-devel openssl-devel
 
 	1) wget https://www.python.org/ftp/python/3.5.2/Python-3.5.2.tgz
 	2) tar -xvzf Python-3.5.2.tgz

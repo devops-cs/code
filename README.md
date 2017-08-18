@@ -214,5 +214,5 @@
 	done
 -------------------------------------------------------------------
 		printf "\033[0;31m Hello \033[0m\n" -> red
-		printf "\033[0;32m pronoy \033[0m\n" -> green
-		printf "\033[0;33m pronoy \033[0m\n" -> yellow
+		printf "\033[0;32m Hello \033[0m\n" -> green
+		printf "\033[0;33m Hello \033[0m\n" -> yellow

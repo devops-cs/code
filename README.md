@@ -225,6 +225,25 @@
 		to sort in uniq order, r=to sort in reverse order, n= numerical sort 
 		cut -f -> f=is like column, 1 means 1st column, d=acts as delimiter
 		uniq -c - prefix lines by the number of occurrences
+-----------------------------------------------------------------------------
+
+		#awk '!/^$/{print $1}'  -> To ignore blank lines with awk command
+		
+		similarly we can ignore lines which are starting with # in a file 
+		eg: cat ls_files.txt |awk '!/^#/{print $1}'
+
+-----------------------------------------------------------------------------
+
+		#awk -F: '{print $2; system("bash -c hostname")}'
+		We use system() flag to run a command in awk
+		
+---------------------------------------------------------------------------
+		To grep a word in a line and use in awk
+		
+		#ifconfig enp0s3 | awk -F : '/inet /'
+        	#inet 10.0.2.*  netmask 255.255.255.0  broadcast 10.0.2.255
+		#ifconfig enp0s3 | awk '/inet / {print $2}'
+		
 		
 		
 		

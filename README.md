@@ -212,3 +212,5 @@
 			*) Pause "Select between 1 to 5 only"
 		esac
 	done
+----------------------------------------------------
+		printf "\033[0;31m Hello \033[0m\n"

@@ -220,6 +220,7 @@
 -------------------------------------------------------------------
 
 		#netstat -tunap |awk 'NR > 2{print $4}' |sort -rn |cut -f 1 -d : |uniq -c
+		
 		NR is used to ignore lines
 		to sort in uniq order, r=to sort in reverse order, n= numerical sort 
 		cut -f -> f=is like column, 1 means 1st column, d=acts as delimiter

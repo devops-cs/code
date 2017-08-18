@@ -260,4 +260,39 @@
 			exit 0;
 		fi
 ------------------------------------------------------------------------
+		#!/bin/bash
+		echo '*******' |passwd --stdin root # set the root password
+		/usr/bin/systemctl stop firewalld
+		/usr/bin/systemctl disable firewalld
+		echo "nameserver 8.8.8.8" > /etc/resolv.conf
 		
+		###
+		#export LOC=MUM
+		#export LOC=BAN
+		export LOC=TAN
+		
+		if [ ${LOC = "MUM" ]; then
+			export NTP_SER=*.*.*.*
+			export DNS_SER=*.*.*.*
+		
+		elif [ ${LOC = "BAN" ]; then
+			export NTP_SER=*.*.*.*
+			export DNS_SER=*.*.*.*
+		
+		elif [ ${LOC = "TAN" ]; then
+			export NTP_SER=*.*.*.*
+			export DNS_SER=*.*.*.*
+		fi
+		
+		/bin/mv /etc/ntp.conf /etc/ntp.conf.bak.`date '+%Y%m%d%H%M%S'`
+		
+		/bin/cat <<EOF > /etc/ntp.conf
+		tinker panic 0
+		restrict default nomodify notrap noquery
+		restrict 127.0.0.1
+		restrict ::1
+		server ${NTP_SER} iburst 
+		restrict ${NTP_SER} mask 255.255.255.255 nomodify notrap noquery
+		driftfile /var/lib/ntp/drift
+		EOF
+		/etc/init.d/ntpd restart

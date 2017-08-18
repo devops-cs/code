@@ -212,5 +212,7 @@
 			*) Pause "Select between 1 to 5 only"
 		esac
 	done
-----------------------------------------------------
-		printf "\033[0;31m Hello \033[0m\n"
+-------------------------------------------------------------------
+		printf "\033[0;31m Hello \033[0m\n" -> red
+		printf "\033[0;32m pronoy \033[0m\n" -> green
+		printf "\033[0;33m pronoy \033[0m\n" -> yellow

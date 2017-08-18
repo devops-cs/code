@@ -243,9 +243,21 @@
 		#ifconfig enp0s3 | awk -F : '/inet /'
         	#inet 10.0.2.*  netmask 255.255.255.0  broadcast 10.0.2.255
 		#ifconfig enp0s3 | awk '/inet / {print $2}'
+-----------------------------------------------------------------------------	
+		copy the list of serevers in /tmp/serverlist file and then execute below command
+		# for i in `cat /tmp/serverlist`; do bash your_script $i; done
+------------------------------------------------------------------------------
+
+		#!/bin/bash
 		
-		
-		
-		
-		
+		if [ -z $1 ] 2> /dev/null; # Zero-length
+		then
+        		printf "\033[0;33m ******* Please Enter Server name on which 'test.sh' is to be executed ******* \033[0m\n";
+        		exit 0;
+		else
+       		 	yum install -y expect
+        		scp -o BatchMode=yes -o ServerAliveInterval=5 -o StrictHostKeyChecking=no /tmp/test.sh user@$1:/tmp
+			exit 0;
+		fi
+------------------------------------------------------------------------
 		

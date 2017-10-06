@@ -1,0 +1,57 @@
+[root@dev ~]# cat file.pp
+file { '/root/file1':
+  ensure  => 'file',
+  type    => 'file',
+}
+
+[root@dev ~]# puppet apply file.pp
+Notice: Compiled catalog for dev in environment production in 0.08 seconds
+Error: Parameter type failed on File[/root/file1]: type is read-only at /root/file.pp:5
+Wrapped exception:
+type is read-only
+
+##############################################################################
+
+[root@dev ~]# cat file.pp
+file { '/root/file1':
+  ensure  => 'file',
+  owner => '0',
+  group => '0',
+  mode => '0644',
+
+}
+
+
+[root@dev ~]# puppet apply file.pp
+Notice: Compiled catalog for dev in environment production in 0.07 seconds
+Notice: /Stage[main]/Main/File[/root/file1]/ensure: created
+Notice: Finished catalog run in 0.01 seconds
+
+
+
+type => # A read-only state to check the file..
+
+################################################################################
+
+
+file { '/root/file2':
+  ensure  => 'file',
+  content => inline_template("created by ajay at <%= Time.now%>\n"),
+}
+
+################################################################################
+
+Class in puppet
+
+################################################################################
+
+Chef -> directory structure
+
+###############################################################################
+
+ chef generate cookbook motd
+
+Dir structure
+
+##############################################################################
+

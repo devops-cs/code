@@ -1,0 +1,13 @@
+cookbook --> recipes --> resources (file, dir, packages, services)
+
+Chef is automating and managing the configuration of intrastructure. Written in Ruby.
+
+
+a) Chef server (Enterprise)
+b) hosted chef server (1st 10 server free)
+c) chef solo
+
+
+
+
+

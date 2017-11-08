@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 	#master.hostmanager.aliases = %w(master1)
 	config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 	master.vm.provision "shell", inline: <<-SHELL
-		sudo systemctl reload  sshd
+		
 		sudo yum install epel-release -y
 		sudo yum update -y
 		#Java installtion and path set
@@ -46,6 +46,7 @@ Vagrant.configure("2") do |config|
 		sudo tar -xvf apache-maven-3.5.2-bin.tar.gz
 		sudo sed -i '/PasswordAuthentication/d/' /etc/ssh/sshd_config
 		sudo echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
+		sudo systemctl reload  sshd
 		SHELL
 	end
 end
